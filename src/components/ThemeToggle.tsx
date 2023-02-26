@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
-import { theme } from "tailwind.config.cjs";
 
 export default function ThemeToggle({ theme: propTheme }: { theme: string }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -40,4 +39,8 @@ export default function ThemeToggle({ theme: propTheme }: { theme: string }) {
 }
 
 const useIsomorphicLayoutEffect =
-  typeof window != "undefined" ? useLayoutEffect : () => {};
+  typeof window != "undefined"
+    ? useLayoutEffect
+    : () => {
+        /* do nothing */
+      };
