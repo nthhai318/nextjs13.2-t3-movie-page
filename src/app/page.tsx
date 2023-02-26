@@ -1,13 +1,20 @@
 import { type Metadata } from "next";
 import SignIn from "~/components/SignIn";
+import ThemeToggle from "~/components/ThemeToggle";
+import { cookies } from "next/headers";
 
 export default function Page() {
+  const cookieStore = cookies();
+  const themeCookie = cookieStore.get("theme");
+  const theme = themeCookie?.value || "dark";
+
   return (
-    <div className="flex h-[100vh] w-full flex-col items-center justify-center gap-7 bg-black text-white">
+    <div className="flex h-[100vh] w-full flex-col items-center justify-center gap-7 bg-backgroundneutral text-primary duration-500">
       <h1 className="text-[2rem] font-bold">
         Hello, this is Home Page for App directory
       </h1>
       <SignIn />
+      <ThemeToggle theme={theme} />
     </div>
   );
 }

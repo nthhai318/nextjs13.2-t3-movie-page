@@ -2,12 +2,16 @@ import { type ReactNode } from "react";
 import AuthProvider from "~/components/AuthProvider";
 import ClientProvider from "~/utils/trpcClient";
 import "../styles/globals.css";
+import { cookies } from "next/headers";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const cookieStore = cookies();
+  const themeCookie = cookieStore.get("theme");
+  const theme = themeCookie?.value || "dark";
   return (
     <ClientProvider>
       <AuthProvider>
-        <html lang="en">
+        <html lang="en" className={theme == "dark" ? "dark" : undefined}>
           <body>{children}</body>
         </html>
       </AuthProvider>
