@@ -9,7 +9,7 @@ export default function Page() {
   const theme = themeCookie?.value || "dark";
 
   return (
-    <div className="flex h-[100vh] w-full flex-col items-center justify-center gap-7 bg-backgroundneutral text-primary duration-500">
+    <div className="flex h-[100vh] w-full flex-col items-center justify-center gap-7 ">
       <h1 className="text-[2rem] font-bold">
         Hello, this is Home Page for App directory
       </h1>

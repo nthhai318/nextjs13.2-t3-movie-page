@@ -12,7 +12,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <ClientProvider>
       <AuthProvider>
         <html lang="en" className={theme == "dark" ? "dark" : undefined}>
-          <body>{children}</body>
+          <body className="bg-backgroundneutral text-primary duration-500">
+            {children}
+          </body>
         </html>
       </AuthProvider>
     </ClientProvider>
