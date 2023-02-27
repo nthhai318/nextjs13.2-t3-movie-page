@@ -12,7 +12,7 @@ export default function SignIn() {
         </p>
       )}
       <button
-        className="w-[20rem] rounded-md bg-hightlight p-2"
+        className="w-[20rem] rounded-md bg-hightlight p-2 shadow-2xl"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {!sessionData ? "Sign In" : "Sign Out"}

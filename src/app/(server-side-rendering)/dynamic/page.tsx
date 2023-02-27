@@ -28,12 +28,12 @@ type TrendingMovies = {
 };
 
 export default async function Page() {
-  const trendingMovies = await getTrendingMovies();
+  const trendingMovies = await getTrendingMovies<TrendingMovies>();
   if (typeof trendingMovies)
     return (
-      <div className="mx-auto max-w-[960px]">
+      <div className="mx-auto max-w-[1200px] px-5">
         <Link href="/">
-          <p className="hover:underline">Back to Home Page</p>
+          <p className="text-center hover:underline">Back to Home Page</p>
         </Link>
         <h1 className="text-center text-[2rem] font-bold uppercase">
           This shows example of Dynamic Rendering Page with TMDB Database
@@ -49,7 +49,7 @@ export default async function Page() {
         <h2 className="my-10 text-center text-[1.5rem] font-bold">
           Top 20 Trending Movies Today
         </h2>
-        <div className="mx-auto mb-10 grid grid-cols-2 items-center justify-center gap-10">
+        <div className="mx-auto mb-10 grid grid-cols-1 items-center justify-center gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {trendingMovies.results.map((movie) => {
             return (
               <div key={movie.id}>
@@ -62,10 +62,10 @@ export default async function Page() {
     );
 }
 
-async function getTrendingMovies() {
+async function getTrendingMovies<Type>(): Promise<Type> {
   const res = await fetch(trendingApi, { next: { revalidate: 43200 } });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  return res.json() as Promise<TrendingMovies>;
+  return res.json() as Promise<Type>;
 }
