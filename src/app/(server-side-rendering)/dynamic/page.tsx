@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MovieCard from "./MovieCard";
 
 const apiKey = process.env.TMDB_API_KEY ?? "";
@@ -31,6 +32,9 @@ export default async function Page() {
   if (typeof trendingMovies)
     return (
       <div className="mx-auto max-w-[960px]">
+        <Link href="/">
+          <p className="hover:underline">Back to Home Page</p>
+        </Link>
         <h1 className="text-center text-[2rem] font-bold uppercase">
           This shows example of Dynamic Rendering Page with TMDB Database
         </h1>

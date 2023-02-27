@@ -2,6 +2,7 @@ import { type Metadata } from "next";
 import SignIn from "~/components/SignIn";
 import ThemeToggle from "~/components/ThemeToggle";
 import { cookies } from "next/headers";
+import Link from "next/link";
 
 export default function Page() {
   const cookieStore = cookies();
@@ -15,6 +16,12 @@ export default function Page() {
       </h1>
       <SignIn />
       <ThemeToggle theme={theme} />
+      <Link href="/dynamic">
+        <button className="w-[20rem] rounded-md bg-hightlight p-2">
+          {" "}
+          Testing Server side rendering
+        </button>
+      </Link>
     </div>
   );
 }
