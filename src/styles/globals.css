@@ -10,6 +10,7 @@ html {
   --color-hightlight-red: 238 86 38;
   --color-hightlight-blue: 30 58 190;
   font-size: 20px;
+  scroll-behavior: smooth;
 }
 
 html.dark {
