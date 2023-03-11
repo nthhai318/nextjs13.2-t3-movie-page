@@ -18,9 +18,9 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
           <p className="my-2 text-[0.75rem] italic">{movie.release_date}</p>
           <p className="my-2 text-[0.75rem] italic">{movie.overview}</p>
           <Link href={`/dynamic/movie/${movie.id}`}>
-            <button className="mb-3 rounded-md bg-red-900 px-2 py-1">
-              Details
-            </button>
+            <p className="mb-3 w-fit rounded-md bg-red-900 px-2 py-1">
+              Read more
+            </p>
           </Link>
         </div>
       </div>
