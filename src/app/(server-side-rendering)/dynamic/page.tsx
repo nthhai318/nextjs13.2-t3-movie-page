@@ -51,11 +51,7 @@ export default async function Page() {
         </h2>
         <div className="mx-auto mb-10 grid grid-cols-1 items-center justify-center gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {trendingMovies.results.map((movie) => {
-            return (
-              <div key={movie.id}>
-                <MovieCard movie={movie} />
-              </div>
-            );
+            return <MovieCard movie={movie} key={movie.id} />;
           })}
         </div>
       </div>
