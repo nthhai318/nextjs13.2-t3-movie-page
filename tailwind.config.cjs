@@ -12,5 +12,8 @@ module.exports = {
       },
     },
   },
+  backgroundSize: {
+    '150%': '150%',
+  }, 
   plugins: [],
 };
