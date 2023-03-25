@@ -13,7 +13,7 @@ export default function Nav() {
       <SignIn />
       <ThemeToggle theme={theme} />
       <Link href="/dynamic">
-        <button className="rounded-md bg-hightlight p-2">Testing SSR</button>
+        <button className="rounded-md p-2 hover:underline">Testing SSR</button>
       </Link>
     </div>
   );

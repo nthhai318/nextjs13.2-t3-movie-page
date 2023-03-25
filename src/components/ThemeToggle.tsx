@@ -27,11 +27,7 @@ export default function ThemeToggle({ theme: propTheme }: { theme: string }) {
 
   return (
     <>
-      <button
-        ref={ref}
-        className="rounded-md bg-hightlight p-2 "
-        onClick={toggleTheme}
-      >
+      <button ref={ref} className="p-2 hover:underline" onClick={toggleTheme}>
         Theme Toggle: {theme == "dark" ? "dark" : "light"}
       </button>
     </>

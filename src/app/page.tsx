@@ -17,7 +17,7 @@ export default function Page() {
       <SignIn />
       <ThemeToggle theme={theme} />
       <Link href="/dynamic">
-        <button className="w-[20rem] rounded-md bg-hightlight p-2">
+        <button className="p-2 hover:underline">
           {" "}
           Testing Server side rendering
         </button>

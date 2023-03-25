@@ -12,7 +12,7 @@ export default function SignIn() {
         </p>
       )}
       <button
-        className="rounded-md bg-hightlight p-2 shadow-2xl"
+        className="p-2 hover:underline"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {!sessionData ? "Sign In" : "Sign Out"}
